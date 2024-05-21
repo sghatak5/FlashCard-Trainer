@@ -2,6 +2,7 @@
 
 ## FlashCard Trainer
 
+
 ### Introduction
 Client Order is a browser-based web application designed to facilitate learning through the flashcard principle. This software aims to streamline the creation, management, and learning process of flashcards, providing users with an efficient tool for studying and retaining information.
 
@@ -19,6 +20,7 @@ This project is maintained by Team10 of the Software Engineering course at Techn
 
 #### Use Case Diagram
 The use case diagram provides a holistic view of the project's functionality. You can view the diagram [here](FlashCard_Trainer_UseCaseDiagram.png).
+
 
 
 
