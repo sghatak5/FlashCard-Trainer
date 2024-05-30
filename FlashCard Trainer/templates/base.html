@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard Trainer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Flashcard Trainer</h1>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+        {% if not is_home_page %}
+        <button class="back-button" onclick="goBack()">Go Back</button> <!-- Back button -->
+        {% endif %}
+    </main>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
