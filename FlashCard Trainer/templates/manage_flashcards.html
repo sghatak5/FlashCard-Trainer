@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Flashcards</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
         <h1>Manage Flashcards</h1>
         <div class="buttons">
-            <a href="/create_flashcard"><button>Create Flashcard</button></a>
-            <a href="/show_flashcards"><button>Show Flashcards</button></a>
+            <a href="{{ url_for('flashcards.create_flashcard') }}"><button>Create Flashcard</button></a>
+            <a href="{{ url_for('flashcards.show_flashcards') }}"><button>Show Flashcards</button></a>
         </div>
         <a href="/">Back to Home</a>
     </div>

@@ -1,19 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
-    <div class="container">
-        <h1>FlashCard Game</h1>
-        <div class="buttons">
-            <a href="/manage_decks"><button>Manage Deck</button></a> 
-            <a href="/manage_flashcards"><button>Manage Flashcard</button></a>
-            <a href="/start_learning"><button>Start Learning</button></a> 
-        </div>
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Welcome to Flashcard Trainer</h2>
+    <p>Use this application to create, manage, and study flashcards.</p>
+    <p>Select an option from the menu to get started:</p>
+    <!-- <ul>
+        <li><a href="{{ url_for('manage_decks') }}">Manage Decks</a> - Create and manage your flashcard decks.</li>
+        <li><a href="{{ url_for('manage_flashcards') }}">Manage Flashcards</a> - Add and organize your flashcards.</li>
+        <li><a href="{{ url_for('start_learning') }}">Start Learning</a> - Review your flashcards and test your knowledge.</li>
+    </ul> -->
+    
+    <div class="buttons">
+        <button title="Create and manage your flashcard decks">Manage Decks</button>
+        <button title="Manage Flashcards">Manage Flashcards</button>
+        <button title="Start Learning">Start Learning</button>
     </div>
-</body>
-</html>
+{% endblock %}
+
+{% set is_home_page = True %}
