@@ -44,3 +44,5 @@ def delete_deck():
         with open(decks_file, 'w') as file:
             json.dump(decks, file, indent=4)
         return redirect(url_for('decks.show_decks'))
+    
+    
