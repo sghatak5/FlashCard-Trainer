@@ -1,9 +1,9 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 import json
 
-deck = Blueprint('decks', __name__,)
+deck_blueprint = Blueprint('decks', __name__,)
  
-@deck.route('/create_deck', methods=['GET', 'POST'])
+@deck_blueprint.route('/create_deck', methods=['GET', 'POST'])
 def create_deck():
     if request.method == 'POST':
         deck_name = request.form['deck_name']
