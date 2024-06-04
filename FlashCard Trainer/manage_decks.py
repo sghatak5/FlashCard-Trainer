@@ -21,3 +21,26 @@ def create_deck():
             return redirect(request.url)
     else:
         return render_template('create_deck.html')
+    
+@deck_blueprint.route('/show_decks')
+def show_decks():
+    with open('decks.json', 'r') as file:
+        decks = json.load(file)
+    return render_template('show_decks.html', decks=decks)
+ 
+@deck_blueprint.route('/delete_deck', methods=['POST'])
+def delete_deck():
+    if request.method == 'POST':
+        deck_name = request.form['deck_name']
+        print("Deleting deck:", deck_name)
+        decks_file = 'decks.json'
+        try:
+            with open(decks_file, 'r') as file:
+                decks = json.load(file)
+        except FileNotFoundError:
+            decks = []
+        decks = [deck for deck in decks if deck['name'].strip().lower() != deck_name.strip().lower()]
+        print("Updated decks:", decks)  
+        with open(decks_file, 'w') as file:
+            json.dump(decks, file, indent=4)
+        return redirect(url_for('decks.show_decks'))
