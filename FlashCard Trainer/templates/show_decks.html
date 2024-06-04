@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+ 
+{% block content %}
+    <h2>Show Decks</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Deck Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for deck in decks %}
+                <tr>
+                    <td>{{ deck['name'] }}</td>
+                    <td>
+                        <form action="{{ url_for('decks.delete_deck') }}" method="POST">
+                            <input type="hidden" name="deck_name" value="{{ deck['name'] }}">
+                            <input type="submit" value="Delete">
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
