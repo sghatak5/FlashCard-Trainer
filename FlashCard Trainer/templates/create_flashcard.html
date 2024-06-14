@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+ 
+{% block content %}
+    <h2>Create Flashcard</h2>
+    <form action="{{ url_for('flashcards.create_flashcard') }}" method="POST">
+        <label for="deck">Select Deck:</label>
+        <select name="deck" id="deck">
+            {% for deck in decks %}
+                <option value="{{ deck }}">{{ deck }}</option>
+            {% endfor %}
+        </select><br><br>
+        <label for="question">Question:</label><br>
+        <textarea name="question" id="question" rows="4" cols="50"></textarea><br><br>
+        <label for="answer">Answer:</label><br>
+        <textarea name="answer" id="answer" rows="4" cols="50"></textarea><br><br>
+        <input type="submit" value="Create Flashcard">
+    </form>
+{% endblock %}
