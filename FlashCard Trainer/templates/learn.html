@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Learning Deck: {{ deck_name }}</h2>
+    <div>
+        <p><strong>Question:</strong> {{ flashcard.flashcard.question }}</p>
+        {% if show_answer %}
+            <p><strong>Answer:</strong> {{ flashcard.flashcard.answer }}</p>
+            <form action="{{ url_for('start_learning.learn', deck_name=deck_name) }}" method="POST">
+                <input type="hidden" name="card_id" value="{{ flashcard.id }}">
+                <button type="submit" name="known" value="true">I knew it</button>
+                <button type="submit" name="known" value="false">I didn't know</button>
+            </form>
+        {% else %}
+            <form action="{{ url_for('start_learning.reveal_answer', deck_name=deck_name) }}" method="POST">
+                <input type="hidden" name="card_id" value="{{ flashcard.id }}">
+                <button type="submit">Show Answer</button>
+            </form>
+        {% endif %}
+    </div>
+{% endblock %}

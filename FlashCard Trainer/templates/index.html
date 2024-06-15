@@ -8,7 +8,7 @@
     <div class="buttons">
         <a href="{{ url_for('manage_decks') }}"><button title="Create and manage your flashcard decks">Manage Decks</button></a>
         <a href="{{ url_for('manage_flashcards') }}"><button title="Manage your flashcards">Manage flashcards</button></a>
-        <button title="Start Learning">Start Learning</button>
+        <a href="{{ url_for('start_learning.show_decks_for_learning') }}"><button title="Start Learning">Start Learning</button></a>
     </div>
 {% endblock %}
 

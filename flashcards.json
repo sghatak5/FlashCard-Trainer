@@ -3,5 +3,10 @@
         "deck": "manthan test",
         "question": "1=1",
         "answer": "1"
+    },
+    {
+        "deck": "Python",
+        "question": "Test Question",
+        "answer": "Test Answer"
     }
 ]
