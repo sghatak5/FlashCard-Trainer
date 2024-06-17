@@ -10,17 +10,37 @@
     <header>
         <h1>Flashcard Trainer</h1>
     </header>
+
     <main>
         {% block content %}
         {% endblock %}
         {% if not is_home_page %}
-        <button class="back-button" onclick="goBack()">Go Back</button> <!-- Back button -->
+        <a href="/"><button class="back-button">Home</button></a>
         {% endif %}
     </main>
+
     <script>
         function goBack() {
             window.history.back();
         }
     </script>
+    <script>
+        function flipCard() {
+            const flashcard = document.querySelector('.flashcard');
+            const buttonsContainer = document.getElementById('buttons-container');
+    
+            flashcard.classList.toggle('flipped');
+    
+            // Show the buttons after the flip animation completes
+            setTimeout(() => {
+                if (flashcard.classList.contains('flipped')) {
+                    buttonsContainer.style.display = 'flex';
+                } else {
+                    buttonsContainer.style.display = 'none';
+                }
+            }, 600); 
+        }
+    </script>
+    
 </body>
 </html>

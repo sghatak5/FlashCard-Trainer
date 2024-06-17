@@ -17,7 +17,7 @@ def create_deck():
                 json.dump(decks, file, indent=4)
             return redirect(url_for('manage_decks'))
         else:
-            flash('Please provide a name for the deck.', 'error')
+            #flash('Please provide a name for the deck.', 'error')
             return redirect(request.url)
     else:
         return render_template('create_deck.html')

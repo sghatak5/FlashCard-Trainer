@@ -8,5 +8,12 @@
             <input type="text" id="deck_name" name="deck_name" required>
         </div>
         <button type="submit">Create Deck</button>
+        
     </form>
+    <button class="back-button" onclick="goBack()">Go Back</button>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 {% endblock %}

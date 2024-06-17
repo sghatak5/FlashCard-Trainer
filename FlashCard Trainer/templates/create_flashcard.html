@@ -15,4 +15,10 @@
         <textarea name="answer" id="answer" rows="4" cols="50"></textarea><br><br>
         <input type="submit" value="Create Flashcard">
     </form>
+    <button class="back-button" onclick="goBack()">Go Back</button>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 {% endblock %}

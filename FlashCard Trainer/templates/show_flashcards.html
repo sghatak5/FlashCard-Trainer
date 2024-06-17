@@ -29,4 +29,10 @@
             {% endfor %}
         </tbody>
     </table>
+    <button class="back-button" onclick="goBack()">Go Back</button>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 {% endblock %}

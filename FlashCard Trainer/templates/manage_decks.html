@@ -1,19 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Decks</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <div class="container">
-        <h1>Manage Decks</h1>
-        <div class="buttons">
-            <a href="{{ url_for('decks.create_deck') }}"><button>Create Deck</button></a>
-            <a href="{{ url_for('decks.show_decks') }}"><button>Show Deck</button></a>
-        </div>
-        <a href="/">Back to Home</a>
-    </div>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Manage Decks</h1>
+<div class="buttons">
+    <a href="{{ url_for('decks.create_deck') }}"><button>Create Deck</button></a>
+    <a href="{{ url_for('decks.show_decks') }}"><button>Show Deck</button></a>
+</div>
+{% endblock %}
