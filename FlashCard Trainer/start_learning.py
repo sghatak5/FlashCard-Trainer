@@ -6,12 +6,30 @@ start_learning_blueprint = Blueprint('start_learning', __name__)
 
 @start_learning_blueprint.route('/')
 def show_decks_for_learning():
+    """
+    Display the available decks for learning.
+
+    Returns:
+        str: The rendered HTML of the start learning page with the list of decks.
+    """
     with open('decks.json', 'r') as file:
         decks = json.load(file)
     return render_template('start_learning.html', decks=decks)
 
 @start_learning_blueprint.route('/<deck_name>', methods=['GET', 'POST'])
 def learn(deck_name):
+    """
+    Handle the learning process for a specific deck.
+
+    GET: Display the first flashcard to learn or review.
+    POST: Record the learning progress and update the learning history.
+
+    Args:
+        deck_name (str): The name of the deck to learn.
+
+    Returns:
+        str: The rendered HTML of the learning page with the flashcard or a message.
+    """
     with open('flashcards.json', 'r') as file:
         flashcards = [fc for fc in json.load(file) if fc['deck'] == deck_name]
 
@@ -45,7 +63,7 @@ def learn(deck_name):
     except FileNotFoundError:
         learning_history = []
 
-    to_learn = filter_flashcards(flashcards, learning_history, deck_name)
+    to_learn = learning_algorithm(flashcards, learning_history, deck_name)
 
     if not to_learn:
         return render_template('message.html', message='No flashcards to review at this time.', back_url=url_for('start_learning.show_decks_for_learning'))
@@ -54,13 +72,33 @@ def learn(deck_name):
 
 @start_learning_blueprint.route('/<deck_name>/reveal', methods=['POST'])
 def reveal_answer(deck_name):
+    """
+    Reveal the answer to the current flashcard.
+
+    Args:
+        deck_name (str): The name of the deck being learned.
+
+    Returns:
+        str: The rendered HTML of the learning page with the answer revealed.
+    """
     card_id = int(request.form['card_id'])
     with open('flashcards.json', 'r') as file:
         flashcards = [fc for fc in json.load(file) if fc['deck'] == deck_name]
     flashcard = flashcards[card_id]
     return render_template('learn.html', flashcard={'id': card_id, 'flashcard': flashcard}, deck_name=deck_name, show_answer=True)
 
-def filter_flashcards(flashcards, learning_history, deck_name):
+def learning_algorithm(flashcards, learning_history, deck_name):
+    """
+    Learning Algorithm to determine which ones need to be learned or reviewed.
+
+    Args:
+        flashcards (list): The list of flashcards in the deck.
+        learning_history (list): The list of previous learning attempts.
+        deck_name (str): The name of the deck being learned.
+
+    Returns:
+        list: A list of flashcards to be learned or reviewed.
+    """
     today = datetime.now()
     to_learn = []
 
