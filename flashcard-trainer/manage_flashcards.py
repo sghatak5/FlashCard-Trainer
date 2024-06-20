@@ -41,7 +41,7 @@ def create_flashcard():
     
             return redirect(url_for('flashcards.create_flashcard'))
         else:
-            flash('Please provide a question and answer')
+            #flash('Please provide a question and answer')
             return redirect(request.url)
     else:
         try:

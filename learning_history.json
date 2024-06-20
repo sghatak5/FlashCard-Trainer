@@ -10,5 +10,17 @@
         "card_id": 0,
         "timestamp": "2024-06-17T23:15:38.816716",
         "known": true
+    },
+    {
+        "deck_name": "Python",
+        "card_id": 0,
+        "timestamp": "2024-06-18T21:53:47.078127",
+        "known": true
+    },
+    {
+        "deck_name": "Python",
+        "card_id": 0,
+        "timestamp": "2024-06-20T20:54:14.903290",
+        "known": false
     }
 ]
