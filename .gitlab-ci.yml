@@ -7,13 +7,13 @@ stages:
 test1:
   stage: test
   script:
-    - pip install -r requirement.txt
+    - pip install -r requirements.txt
 
 
 test2:
   stage: test
   script:
-    - pip install -r requirement.txt
+    - pip install -r requirements.txt
 
 
 
