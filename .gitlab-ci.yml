@@ -6,12 +6,14 @@ stages:
 
 test1:
   stage: test
+  image: python:3.8
   script:
     - pip install -r requirements.txt
 
 
 test2:
   stage: test
+  image: python:3.8
   script:
     - pip install -r requirements.txt
 
