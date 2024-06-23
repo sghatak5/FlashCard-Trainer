@@ -1,9 +1,19 @@
 stages:
 
-
+  - test
   - build
   - deploy
 
+test1:
+  stage: test
+  script:
+    - pip install -r requirement.txt
+
+
+test2:
+  stage: test
+  script:
+    - pip install -r requirement.txt
 
 
 
