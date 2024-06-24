@@ -1,0 +1,25 @@
+# requirements.txt file for a Python project
+
+# General dependencies
+numpy==1.22.0
+pandas==1.3.5
+requests==2.26.0
+Flask==2.0.2
+
+# Database dependencies
+SQLAlchemy==1.4.27
+psycopg2-binary==2.9.3
+
+# Testing dependencies
+pytest==6.2.5
+pytest-cov==3.0.0
+
+# Linting dependencies
+pylint==2.11.1
+flake8==4.0.1
+
+# For handling environment variables
+python-dotenv==0.19.2
+
+# For datetime operations
+pytz==2021.3
