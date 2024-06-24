@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Manage Flashcards</h1>
+<div class="buttons">
+    <a href="{{ url_for('flashcards.create_flashcard') }}"><button>Create Flashcard</button></a>
+    <a href="{{ url_for('flashcards.show_flashcards') }}"><button>Show Flashcards</button></a>
+</div>
+{% endblock %}

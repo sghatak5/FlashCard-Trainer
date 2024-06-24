@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Welcome to Flashcard Trainer</h2>
+    <p>Use this application to create, manage, and study flashcards.</p>
+    <p>Select an option from the menu to get started:</p>
+    
+    <div class="buttons">
+        <a href="{{ url_for('manage_decks') }}"><button title="Create and manage your flashcard decks">Manage Decks</button></a>
+        <a href="{{ url_for('manage_flashcards') }}"><button title="Manage your flashcards">Manage flashcards</button></a>
+        <a href="{{ url_for('start_learning.show_decks_for_learning') }}"><button title="Start Learning">Start Learning</button></a>
+    </div>
+{% endblock %}
+
+{% set is_home_page = True %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Show Flashcards</h2>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Deck</th>
+                <th>Front</th>
+                <th>Back</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for flashcard in flashcards %}
+                <tr>
+                    <td>{{ flashcard.deck }}</td>
+                    <td>{{ flashcard.question }}</td>
+                    <td>{{ flashcard.answer }}</td>
+                    <td>
+                        <form action="{{ url_for('flashcards.delete_flashcard') }}" method="POST">
+                            <input type="hidden" name="deck" value="{{ flashcard.deck }}">
+                            <input type="hidden" name="question" value="{{ flashcard.question }}">
+                            <input type="submit" value="Delete">
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button class="back-button" onclick="goBack()">Go Back</button>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+{% endblock %}

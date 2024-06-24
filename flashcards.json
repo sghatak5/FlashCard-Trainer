@@ -1,0 +1,192 @@
+[
+    {
+        "deck": "Supervised Learning",
+        "question": "Define Supervised Learning.\r\n",
+        "answer": "Supervised learning is a type of machine learning where the model is trained on labeled data."
+    },
+    {
+        "deck": "Supervised Learning",
+        "question": "What are some common algorithms used in Supervised Learning?",
+        "answer": "linear regression, logistic regression, decision trees, support vector machines, etc."
+    },
+    {
+        "deck": "Supervised Learning",
+        "question": "Explain the concept of overfitting in Supervised Learning.",
+        "answer": "Overfitting occurs when a model learns to memorize the training data instead of generalizing from it. This leads to poor performance on unseen data because the model has essentially learned the noise in the training data.\r\n\r\n"
+    },
+    {
+        "deck": "Supervised Learning",
+        "question": "What is the difference between regression and classification in Supervised Learning?",
+        "answer": "In regression, the goal is to predict a continuous value, while in classification, the goal is to predict a discrete label or category."
+    },
+    {
+        "deck": "Flask",
+        "question": "What is Flask?",
+        "answer": "Flask is a lightweight web framework for Python, designed to make it easy to build web applications quickly and with minimal boilerplate code."
+    },
+    {
+        "deck": "Flask",
+        "question": "Explain the concept of routes in Flask.",
+        "answer": " Routes in Flask are URL patterns that the application will respond to. Each route is associated with a specific function, called a view function, which is executed when the route is accessed by a client."
+    },
+    {
+        "deck": "Flask",
+        "question": "What is a Flask template?",
+        "answer": "Flask uses the Jinja2 templating engine to render templates and inject dynamic data into them before serving them to clients.\r\n\r\n"
+    },
+    {
+        "deck": "Flask",
+        "question": "How does Flask handle HTTP requests?",
+        "answer": "When a client makes an HTTP request to a route, Flask calls the associated function and returns the result as an HTTP response."
+    },
+    {
+        "deck": "Artificial Intelligence",
+        "question": "Define Artificial Intelligence.",
+        "answer": "The simulation of human intelligence processes by machines, especially computer systems."
+    },
+    {
+        "deck": "Artificial Intelligence",
+        "question": "What are the main types of machine learning?",
+        "answer": "Supervised learning, unsupervised learning, and reinforcement learning."
+    },
+    {
+        "deck": "Artificial Intelligence",
+        "question": "What is the Turing Test and its significance in AI?",
+        "answer": "A test to determine whether a machine can exhibit human-like intelligence."
+    },
+    {
+        "deck": "Artificial Intelligence",
+        "question": "Explain the concept of a neural network.",
+        "answer": "A series of algorithms that attempt to recognize patterns by mimicking the human brain's neural networks."
+    },
+    {
+        "deck": "Artificial Intelligence",
+        "question": "What is the difference between strong AI and weak AI?",
+        "answer": "Strong AI has the ability to perform any intellectual task a human can, weak AI is specialized for specific tasks."
+    },
+    {
+        "deck": "Python",
+        "question": "Explain the concept of list comprehension in Python.",
+        "answer": "A concise way to create lists using a single line of code with a for loop."
+    },
+    {
+        "deck": "Python",
+        "question": "What is the difference between deepcopy and copy in Python?",
+        "answer": "deepcopy copies an object along with all objects it references, copy only copies the object."
+    },
+    {
+        "deck": "Python",
+        "question": "Describe the purpose of the self parameter in Python methods.",
+        "answer": "It refers to the instance of the class on which the method is called."
+    },
+    {
+        "deck": "Python",
+        "question": "How does Python handle memory management?",
+        "answer": "Through automatic garbage collection and reference counting."
+    },
+    {
+        "deck": "Python",
+        "question": "What is a lambda function in Python?",
+        "answer": "An anonymous function defined with the lambda keyword."
+    },
+    {
+        "deck": "Digital Marketing",
+        "question": "What is SEO?",
+        "answer": "Search Engine Optimization."
+    },
+    {
+        "deck": "Digital Marketing",
+        "question": "What does PPC stand for?",
+        "answer": "Pay Per Click."
+    },
+    {
+        "deck": "Digital Marketing",
+        "question": "Define content marketing.",
+        "answer": "Creating and sharing valuable content."
+    },
+    {
+        "deck": "Digital Marketing",
+        "question": "What is the purpose of a landing page?",
+        "answer": "To convert visitors into leads."
+    },
+    {
+        "deck": "Digital Marketing",
+        "question": "What is email marketing?",
+        "answer": "Using email to promote products."
+    },
+    {
+        "deck": "Project Management",
+        "question": "What is the main purpose of a project charter?",
+        "answer": "Authorize project start."
+    },
+    {
+        "deck": "Project Management",
+        "question": "What does PMI stand for?",
+        "answer": "Project Management Institute."
+    },
+    {
+        "deck": "Project Management",
+        "question": "Name a popular project management methodology.",
+        "answer": "Agile."
+    },
+    {
+        "deck": "Project Management",
+        "question": "What is a Gantt chart used for?",
+        "answer": "Scheduling tasks."
+    },
+    {
+        "deck": "Project Management",
+        "question": "Define a project milestone.",
+        "answer": "Significant event or point."
+    },
+    {
+        "deck": "Docker",
+        "question": "What is Docker?",
+        "answer": "Docker is a platform for developing, shipping, and running applications in containers."
+    },
+    {
+        "deck": "Docker",
+        "question": "What is a Docker container?",
+        "answer": "A lightweight, standalone, and executable package that includes everything needed to run a piece of software."
+    },
+    {
+        "deck": "Docker",
+        "question": "What is a Docker image?",
+        "answer": "A read-only template used to create Docker containers."
+    },
+    {
+        "deck": "Docker",
+        "question": "How do you build a Docker image?",
+        "answer": "Using the 'docker build' command with a Dockerfile."
+    },
+    {
+        "deck": "Docker",
+        "question": "What is Docker Hub?",
+        "answer": "A cloud-based registry service for sharing Docker images."
+    },
+    {
+        "deck": "CI/CD",
+        "question": "What does CI/CD stand for?",
+        "answer": "Continuous Integration and Continuous Deployment/Delivery."
+    },
+    {
+        "deck": "CI/CD",
+        "question": "What is Continuous Integration?",
+        "answer": "The practice of merging all developer working copies to a shared mainline several times a day."
+    },
+    {
+        "deck": "CI/CD",
+        "question": "What is Continuous Delivery?",
+        "answer": "The practice of automating the delivery of applications to selected infrastructure environments."
+    },
+    {
+        "deck": "CI/CD",
+        "question": "What is Continuous Deployment?",
+        "answer": "The practice of automatically deploying every change that passes the automated tests to production."
+    },
+    {
+        "deck": "CI/CD",
+        "question": "Name a popular CI/CD tool.",
+        "answer": "Jenkins."
+    }
+]

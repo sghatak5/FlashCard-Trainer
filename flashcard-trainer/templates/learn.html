@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Learning Deck: {{ deck_name }}</h2>
+    <div class="flashcard" onclick="flipCard()">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">
+                <p> {{ flashcard.flashcard.question }}</p> 
+            </div>
+            <div class="flashcard-back">
+                <p> {{ flashcard.flashcard.answer }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="buttons-container" id="buttons-container" style="display: none;">
+        <form action="{{ url_for('start_learning.learn', deck_name=deck_name) }}" method="POST">
+            <input type="hidden" name="card_id" value="{{ flashcard.id }}">
+            <button type="submit" name="known" value="true">Answer Known</button>
+            <button type="submit" name="known" value="false">Answer Unknown</button>
+        </form>
+    </div>
+    <button class="back-button" onclick="goBack()">Go Back</button>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+{% endblock %}
