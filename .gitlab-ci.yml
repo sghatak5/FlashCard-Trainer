@@ -47,4 +47,4 @@ deploy:
     - docker run -d -p 5000:5000 "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME"
   environment:
     name: production
-    url: http://localhost:5000  # Replace <your-server-ip> with the actual server IP or domain
+    url: http://127.0.0.1:5000  # Replace <your-server-ip> with the actual server IP or domain
