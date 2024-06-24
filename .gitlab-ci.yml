@@ -9,7 +9,7 @@ lint:
   image: python:3.8
   script:
     - pip install pylint
-    - pylint static/
+    - pylint "flashcard-trainer/static"
   allow_failure: true
 
 test1:
