@@ -1,11 +1,26 @@
 [
     {
-        "name": "manthan test"
+        "name": "Artificial Intelligence"
     },
     {
         "name": "Python"
     },
     {
-        "name": "Test Deck"
+        "name": "Flask"
+    },
+    {
+        "name": "Supervised Learning"
+    },
+    {
+        "name": "Digital Marketing"
+    },
+    {
+        "name": "Project Management"
+    },
+    {
+        "name": "Docker"
+    },
+    {
+        "name": "CI/CD"
     }
 ]
