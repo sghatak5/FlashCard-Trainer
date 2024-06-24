@@ -1,26 +1,32 @@
 stages:
-
+  - lint
   - test
   - build
   - deploy
+
+lint:
+  stage: lint
+  image: python:3.8
+  script:
+    - pip install pylint
+    - pylint static/
+  allow_failure: true
+  retry: 2
 
 test1:
   stage: test
   image: python:3.8
   script:
     - pip install -r requirements.txt
-
+  retry: 2
 
 test2:
   stage: test
   image: python:3.8
   script:
     - pip install -r requirements.txt
+  retry: 2
 
-
-
-
-# Build stage
 build:
   stage: build
   image: docker:latest
@@ -31,11 +37,8 @@ build:
   script:
     - docker build -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME" .
     - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME"
-  artifacts:
-    paths:
-      - build/
+  retry: 2
 
-# Deploy stage
 deploy:
   stage: deploy
   image: docker:latest
@@ -45,6 +48,8 @@ deploy:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" "$CI_REGISTRY"
   script:
     - docker pull "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME"
-    - docker run -d -p 80:5000 "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME"
+    - docker run -d -p 5000:5000 "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME"
   environment:
     name: production
+    url: http://localhost:5000  # Replace <your-server-ip> with the actual server IP or domain
+  retry: 2
