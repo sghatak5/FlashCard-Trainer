@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Learning</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Start Learning</h1>
+        <form action="/start_learning" method="post">
+            <label for="deck">Select Deck:</label>
+            <select id="deck" name="deck">
+                {% for deck in decks %}
+                <option value="{{ deck }}">{{ deck }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Start Learning">
+        </form>
+        <div class="flashcard">
+            {% if flashcard %}
+            <h2>Question:</h2>
+            <p>{{ flashcard.question }}</p>
+            <form action="/show_answer" method="post">
+                <input type="hidden" name="answer" value="{{ flashcard.answer }}">
+                <input type="submit" value="Show Answer">
+            </form>
+            {% endif %}
+        </div>
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>
