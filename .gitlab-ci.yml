@@ -11,21 +11,18 @@ lint:
     - pip install pylint
     - pylint static/
   allow_failure: true
-  retry: 2
 
 test1:
   stage: test
   image: python:3.8
   script:
     - pip install -r requirements.txt
-  retry: 2
 
 test2:
   stage: test
   image: python:3.8
   script:
     - pip install -r requirements.txt
-  retry: 2
 
 build:
   stage: build
@@ -37,7 +34,6 @@ build:
   script:
     - docker build -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME" .
     - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME"
-  retry: 2
 
 deploy:
   stage: deploy
@@ -52,4 +48,3 @@ deploy:
   environment:
     name: production
     url: http://localhost:5000  # Replace <your-server-ip> with the actual server IP or domain
-  retry: 2
